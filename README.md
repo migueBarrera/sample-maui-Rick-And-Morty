@@ -3,3 +3,5 @@
 Aplicación de prueba para ver MAUI. Usamos la api pública de RickAndMorty.
 
 ![Android Gif](images/android.gif)
+
+![Mac Gif](images/mac.gif)
