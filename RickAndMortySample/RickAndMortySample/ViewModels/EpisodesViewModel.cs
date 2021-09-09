@@ -32,7 +32,7 @@ namespace RickAndMortySample.ViewModels
             {
                 selectedEpisode = value;
                 OnPropertyChanged();
-                NavigateToEpisode();
+                ShowAlert();
             } 
         }
 
@@ -46,14 +46,14 @@ namespace RickAndMortySample.ViewModels
             Episodes = await episodesService.GetEpisodesAsync();
         }
 
-        private void NavigateToEpisode()
+        private async void ShowAlert()
         {
             if (SelectedEpisode == null)
             {
                 return;
             }
 
-            //App.Current.MainPage.Navigation.PushAsync(new EpisodeDetailPage(selectedEpisode));
+            await App.Current.MainPage.DisplayAlert("Nice!!", $"You tap {selectedEpisode.episode} {selectedEpisode.Name}", "Close");
 
             SelectedEpisode = null;
         }

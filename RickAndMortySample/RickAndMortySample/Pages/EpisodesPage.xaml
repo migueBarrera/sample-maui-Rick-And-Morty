@@ -10,19 +10,29 @@
             SelectedItem="{Binding SelectedEpisode}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <HorizontalStackLayout Spacing="8" Margin="4" Padding="8,0">
+                    <VerticalStackLayout 
+                        Spacing="4" 
+                        Margin="6" 
+                        Padding="8,0">
+                        <HorizontalStackLayout 
+                            Spacing="8" >
+                                <Label 
+                                    Text="{Binding episode}" 
+                                    TextColor="Black"
+                                    FontSize="18"
+                                    FontAttributes="Bold"/>
+                                <Label 
+                                    Text="{Binding Name}" 
+                                    TextColor="Black"
+                                    FontSize="18"
+                                    FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+
                         <Label 
-                        Text="{Binding episode}" 
-                        TextColor="Black"
-                        FontSize="18"
-                        FontAttributes="Bold"/>
-                        <Label 
-                        Text="{Binding Name}" 
-                        TextColor="Black"
-                        FontSize="18"
-                        FontAttributes="Bold"/>
-                    </HorizontalStackLayout>
-                    
+                            Text="{Binding Air_date}" 
+                            TextColor="Gray" 
+                            GridLayout.Row="1"/>
+                    </VerticalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

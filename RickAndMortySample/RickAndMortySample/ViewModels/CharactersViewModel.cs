@@ -32,7 +32,7 @@ namespace RickAndMortySample.ViewModels
             {
                 selectedCharacter = value;
                 OnPropertyChanged();
-                NavigateToCharacterDetail();
+                ShowAlert();
             }
         }
 
@@ -46,14 +46,14 @@ namespace RickAndMortySample.ViewModels
             Characters = await rickAndMortyService.GetCharactersAsync();
         }
 
-        private async void NavigateToCharacterDetail()
+        private async void ShowAlert()
         {
             if (selectedCharacter == null)
             {
                 return;
             }
 
-            await App.Current.MainPage.DisplayAlert("Nice!!", $"You select {selectedCharacter.Name}", "Close");
+            await App.Current.MainPage.DisplayAlert("Nice!!", $"You tap {selectedCharacter.Name}", "Close");
 
             SelectedCharacter = null;
         }
