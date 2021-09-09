@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RickAndMortySample.Pages.RAMTabbedPage"
+    xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    xmlns:pages="clr-namespace:RickAndMortySample.Pages"
+    Style="{StaticResource TabbedPageStyle}">
+    <pages:CharactersPage Title="Characters" IconImageSource="groups_black.png"/>
+    <pages:EpisodesPage Title="Episodes" IconImageSource="ondemand_video_black.png"/>
+</TabbedPage>

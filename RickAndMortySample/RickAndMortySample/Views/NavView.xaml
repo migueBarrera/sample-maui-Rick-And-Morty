@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<FlexLayout 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RickAndMortySample.Views.NavView"
+    BackgroundColor="Blue"
+    Direction="{OnIdiom Phone=Row, Default=Colum}"
+    JustifyContent="{OnIdiom Phone=Center, Default=Start}">
+
+    <FlexLayout.Resources>
+        <Style TargetType="ImageButton">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="Margin" Value="16,4" />
+        </Style>
+    </FlexLayout.Resources>
+
+    <ImageButton
+        x:Name="CharactersTab"
+        Clicked="ChatacterTab_Clicked"/>
+
+    <ImageButton
+        x:Name="EpisodesTab"
+        Clicked="EpisodesTab_Clicked"/>
+</FlexLayout>

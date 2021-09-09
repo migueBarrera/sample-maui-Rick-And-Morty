@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Episodes"
+             x:Class="RickAndMortySample.Pages.EpisodesPage">
+    <ContentPage.Content>
+        <CollectionView 
+            ItemsSource="{Binding Episodes}"
+            SelectionMode="Single"
+            SelectedItem="{Binding SelectedEpisode}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Spacing="8" Margin="4" Padding="8,0">
+                        <Label 
+                        Text="{Binding episode}" 
+                        TextColor="Black"
+                        FontSize="18"
+                        FontAttributes="Bold"/>
+                        <Label 
+                        Text="{Binding Name}" 
+                        TextColor="Black"
+                        FontSize="18"
+                        FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+                    
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

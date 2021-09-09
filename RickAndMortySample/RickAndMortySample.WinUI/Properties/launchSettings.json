@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RickAndMortySample.WinUI": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
+    }
+  }
+}

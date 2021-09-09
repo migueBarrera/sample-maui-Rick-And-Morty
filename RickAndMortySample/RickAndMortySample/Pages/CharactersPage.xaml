@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:RickAndMortySample.Views"
+             Title="Characters"
+             x:Class="RickAndMortySample.Pages.CharactersPage">
+  
+    <ContentPage.Content>
+        <CollectionView
+                ItemsSource="{Binding Characters}"
+                SelectionMode="Single"
+                SelectedItem="{Binding SelectedCharacter}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid 
+                        RowDefinitions="auto,auto,auto" 
+                        ColumnDefinitions="2*,8*"
+                        Margin="4" Padding="8,0"
+                        ColumnSpacing="8"
+                        RowSpacing="4">
+                        <Image
+                            GridLayout.RowSpan="3"
+                            Source="{Binding Image}"
+                            WidthRequest="{x:OnIdiom Default=80, Desktop=220}"
+                            HeightRequest="{x:OnIdiom Default=80, Desktop=220}"/>
+
+                        <Label 
+                            GridLayout.Column="1"
+                                Text="{Binding Name}" 
+                                TextColor="Black"
+                                FontSize="18"
+                                FontAttributes="Bold"/>
+
+                        <HorizontalStackLayout 
+                            Spacing="4" 
+                            HorizontalOptions="StartAndExpand"
+                            GridLayout.Column="1"
+                            GridLayout.Row="1">
+                            <Label
+                                    Text="{Binding Species}" 
+                                    TextColor="Black"
+                                    FontSize="16"
+                                    />
+                            <Label
+                                    Text="{Binding Gender}" 
+                                    TextColor="Black"
+                                    FontSize="16"
+                                    />
+                        </HorizontalStackLayout>
+
+                        <Label
+                            GridLayout.Column="1"
+                            GridLayout.Row="2"
+                            Text="{Binding Status}" 
+                            TextColor="{Binding Status,Converter={StaticResource StatusToColorConverter}}"
+                            FontSize="16"
+                            />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>
